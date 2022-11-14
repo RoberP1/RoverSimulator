@@ -12,7 +12,7 @@ public class RoverControler : MonoBehaviour
     public bool back, isBrake;
     Rigidbody rb;
     WheelCollider[] wheelsColliders;
-    [SerializeField] GameObject[] VisualsWheels;
+    [SerializeField] GameObject[] VisualsWheels,RotationWheels;
 
     //quitar
     public Slider slider, slider2;
@@ -28,7 +28,7 @@ public class RoverControler : MonoBehaviour
         Movement(slider.value);
         back = toggle.isOn;
         Direction(slider2.value);
-        Visual();
+        Visual(slider2.value);
     }
 
     void Movement(float input)
@@ -63,8 +63,11 @@ public class RoverControler : MonoBehaviour
             isBrake = true;
         }
     }
-    void Visual()
+    void Visual(float input)
     {
+        RotationWheels[0].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
+        RotationWheels[1].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
+
         VisualsWheels[0].transform.Rotate(0, actualVelocity, 0);
         VisualsWheels[1].transform.Rotate(0, actualVelocity, 0);
         VisualsWheels[2].transform.Rotate(0, actualVelocity, 0);
