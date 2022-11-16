@@ -14,7 +14,7 @@ public class RoverControler : MonoBehaviour
     WheelCollider[] wheelsColliders;
     [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
     [SerializeField] GameObject _throttleLever, _rotationLever;
-    [SerializeField] float _maxRotationLever;
+    [SerializeField] float _maxDirectionLever,_maxRotationLever;
 
     //quitar
     public Slider slider, slider2;
@@ -26,7 +26,7 @@ public class RoverControler : MonoBehaviour
 
     void Update()
     {
-        // Movement((_throttleLever.transform.rotation.x)+_maxRotationLever/(_maxRotationLever*2));
+         Movement(_throttleLever.transform.localPosition.x/_maxRotationLever);
 
         // Direction((_rotationLever.transform.rotation.x) + _maxRotationLever / (_maxRotationLever * 2));
 
