@@ -9,14 +9,15 @@ public class RoverControler : MonoBehaviour
     [SerializeField] WheelCollider _wheelsFrontLeft, _wheelsFrontRight;
     [SerializeField] float _acceleration, _turn, _velocityMax, _brakeForce;
     public float actualVelocity;
-    public bool back, isBrake;
+    bool _back, _isBrake;
     Rigidbody rb;
     WheelCollider[] wheelsColliders;
-    [SerializeField] GameObject[] VisualsWheels,RotationWheels;
+    [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
+    [SerializeField] GameObject _throttleLever, _rotationLever;
+    [SerializeField] float _maxRotationLever;
 
     //quitar
     public Slider slider, slider2;
-    public Toggle toggle;
     void Start()
     {
        rb= GetComponent<Rigidbody>();
@@ -25,8 +26,13 @@ public class RoverControler : MonoBehaviour
 
     void Update()
     {
+        // Movement((_throttleLever.transform.rotation.x)+_maxRotationLever/(_maxRotationLever*2));
+
+        // Direction((_rotationLever.transform.rotation.x) + _maxRotationLever / (_maxRotationLever * 2));
+
+        // Visual((_rotationLever.transform.rotation.x) + _maxRotationLever / (_maxRotationLever * 2);
+
         Movement(slider.value);
-        back = toggle.isOn;
         Direction(slider2.value);
         Visual(slider2.value);
     }
@@ -35,7 +41,7 @@ public class RoverControler : MonoBehaviour
     {
         float velocity = input * _acceleration * Time.deltaTime * -1;
 
-        if (back) velocity = -velocity;
+        if (_back) velocity = -velocity;
 
          actualVelocity= math.abs(2 * Mathf.PI * _wheelsFrontLeft.radius * _wheelsFrontLeft.rpm * 60 / 1000);
 
@@ -52,27 +58,29 @@ public class RoverControler : MonoBehaviour
     }
     public void Stop()
     {
-        if (isBrake)
+        if (_isBrake)
         {
-            foreach (WheelCollider item in wheelsColliders) item.brakeTorque = 0;
-            isBrake = false;
+            foreach (WheelCollider item in wheelsColliders) item.brakeTorque = 0;           
         }
         else
         {
-            foreach (WheelCollider item in wheelsColliders) item.brakeTorque = _brakeForce;
-            isBrake = true;
+            foreach (WheelCollider item in wheelsColliders) item.brakeTorque = _brakeForce;          
         }
+        _isBrake = !_isBrake;
     }
     void Visual(float input)
     {
-        RotationWheels[0].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
-        RotationWheels[1].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
+        _rotationWheels[0].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
+        _rotationWheels[1].transform.localRotation = Quaternion.Euler(0, 0, _turn*input);
 
-        VisualsWheels[0].transform.Rotate(0, actualVelocity, 0);
-        VisualsWheels[1].transform.Rotate(0, actualVelocity, 0);
-        VisualsWheels[2].transform.Rotate(0, actualVelocity, 0);
-        VisualsWheels[3].transform.Rotate(0, actualVelocity, 0);
-        VisualsWheels[4].transform.Rotate(0, actualVelocity, 0);
-        VisualsWheels[5].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[0].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[1].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[2].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[3].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[4].transform.Rotate(0, actualVelocity, 0);
+        _visualsWheels[5].transform.Rotate(0, actualVelocity, 0);
     }
+
+    public void BackButton() => _back = !_back;
+    
 }
