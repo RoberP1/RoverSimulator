@@ -16,6 +16,8 @@ public class RoverControler : MonoBehaviour
     [SerializeField] GameObject _throttleLever, _rotationLever;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
 
+    public bool isAgus;
+
     //quitar
     public Slider slider, slider2;
     void Start()
@@ -26,15 +28,19 @@ public class RoverControler : MonoBehaviour
 
     void Update()
     {
-         Movement(_throttleLever.transform.localPosition.x/_maxRotationLever);
+        if (isAgus)
+        {
+            Movement(slider.value);
+            Direction(slider2.value);
+            Visual(slider2.value);
+        }
+        else
+        {
+            Movement(_throttleLever.transform.localPosition.x / _maxRotationLever);
+            Direction(_rotationLever.transform.position.x/ _maxRotationLever );
+            Visual(_rotationLever.transform.position.x/ _maxRotationLever);
 
-        // Direction((_rotationLever.transform.rotation.x) + _maxRotationLever / (_maxRotationLever * 2));
-
-        // Visual((_rotationLever.transform.rotation.x) + _maxRotationLever / (_maxRotationLever * 2);
-
-        Movement(slider.value);
-        Direction(slider2.value);
-        Visual(slider2.value);
+        }
     }
 
     void Movement(float input)
@@ -52,6 +58,7 @@ public class RoverControler : MonoBehaviour
     }
     void Direction(float input)
     {
+       // Debug.Log(input);
         float newDirection = input* _turn;
         _wheelsFrontLeft.steerAngle = newDirection;
        _wheelsFrontRight.steerAngle = newDirection;
