@@ -95,5 +95,6 @@ public class RoverControler : MonoBehaviour
     }
 
     public void BackButton() => _back = !_back;
-    
+
+    public void ResetRotation() => _rotationLever.transform.rotation= Quaternion.Euler(70,0,0);
 }
