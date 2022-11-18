@@ -13,7 +13,7 @@ public class RoverControler : MonoBehaviour
     Rigidbody rb;
     WheelCollider[] wheelsColliders;
     [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
-    [SerializeField] GameObject _throttleLever, _rotationLever, _hologram;
+    [SerializeField] GameObject _throttleLever, _rotationLever,_baseRotationLever, _hologram;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
 
     public bool isAgus;
@@ -24,6 +24,7 @@ public class RoverControler : MonoBehaviour
     {
        rb= GetComponent<Rigidbody>();
         wheelsColliders= GetComponentsInChildren<WheelCollider>();
+        
     }
 
     void Update()
@@ -33,13 +34,15 @@ public class RoverControler : MonoBehaviour
             Movement(slider.value);
             Direction(slider2.value);
             Visual(slider2.value);
+
         }
         else
         {
-            Movement(_throttleLever.transform.localPosition.x / _maxRotationLever);
-            Direction((_rotationLever.transform.localRotation.x - _maxRotationLever) / _maxRotationLever );
-            Visual((_rotationLever.transform.localRotation.x - _maxRotationLever) / _maxRotationLever);
-
+            _rotationLever.transform.position= new Vector3(0,0, _baseRotationLever.transform.position.z);
+            float inputRotation = _rotationLever.transform.localPosition.z < 0 ? 0 : _rotationLever.transform.localPosition.z;
+            Movement(_throttleLever.transform.localPosition.x/ _maxDirectionLever);
+            Direction(0.4376513761751f * inputRotation - 0.9919922799418f);
+            Visual(0.4376513761751f * inputRotation - 0.9919922799418f);
         }
     }
 
