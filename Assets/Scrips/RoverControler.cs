@@ -37,8 +37,8 @@ public class RoverControler : MonoBehaviour
         else
         {
             Movement(_throttleLever.transform.localPosition.x / _maxRotationLever);
-            Direction(_rotationLever.transform.position.x/ _maxRotationLever );
-            Visual(_rotationLever.transform.position.x/ _maxRotationLever);
+            Direction((_rotationLever.transform.localRotation.x - _maxRotationLever) / _maxRotationLever );
+            Visual((_rotationLever.transform.localRotation.x - _maxRotationLever) / _maxRotationLever);
 
         }
     }
