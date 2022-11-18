@@ -1501,6 +1501,11 @@ PrefabInstance:
       objectReference: {fileID: 2459640944609478441}
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
+      propertyPath: _velocityMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
       propertyPath: _rotationLever
       value: 
       objectReference: {fileID: 1165095056}
@@ -11875,6 +11880,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7182674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1297122266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 53237006889682624, guid: 7c17b46e26627ad4795e9d5d53c125bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6863746054429436531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297122277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297122266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 0}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1298988683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1899066595905310139, guid: e39d8d0ebbb4568489f039d8a185958e,
@@ -19132,12 +19192,12 @@ PrefabInstance:
     - target: {fileID: 53237006889682639, guid: 7c17b46e26627ad4795e9d5d53c125bb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8191521
       objectReference: {fileID: 0}
     - target: {fileID: 53237006889682639, guid: 7c17b46e26627ad4795e9d5d53c125bb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.5735764
       objectReference: {fileID: 0}
     - target: {fileID: 53237006889682639, guid: 7c17b46e26627ad4795e9d5d53c125bb,
         type: 3}
@@ -19152,7 +19212,7 @@ PrefabInstance:
     - target: {fileID: 53237006889682639, guid: 7c17b46e26627ad4795e9d5d53c125bb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 53237007092344885, guid: 7c17b46e26627ad4795e9d5d53c125bb,
         type: 3}
