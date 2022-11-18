@@ -13,7 +13,7 @@ public class RoverControler : MonoBehaviour
     Rigidbody rb;
     WheelCollider[] wheelsColliders;
     [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
-    [SerializeField] GameObject _throttleLever, _rotationLever;
+    [SerializeField] GameObject _throttleLever, _rotationLever, _hologram;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
 
     public bool isAgus;
@@ -86,6 +86,9 @@ public class RoverControler : MonoBehaviour
         _visualsWheels[3].transform.Rotate(0, actualVelocity, 0);
         _visualsWheels[4].transform.Rotate(0, actualVelocity, 0);
         _visualsWheels[5].transform.Rotate(0, actualVelocity, 0);
+
+        _hologram.transform.localPosition = transform.localPosition;
+        _hologram.transform.localRotation = transform.localRotation;
     }
 
     public void BackButton() => _back = !_back;
