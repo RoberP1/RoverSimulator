@@ -16,10 +16,6 @@ public class RoverControler : MonoBehaviour
     [SerializeField] GameObject _throttleLever, _rotationLever,_baseRotationLever, _hologram;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
 
-    public bool isAgus;
-
-    //quitar
-    public Slider slider, slider2;
     void Start()
     {
        rb= GetComponent<Rigidbody>();
@@ -29,21 +25,11 @@ public class RoverControler : MonoBehaviour
 
     void Update()
     {
-        if (isAgus)
-        {
-            Movement(slider.value);
-            Direction(slider2.value);
-            Visual(slider2.value);
-
-        }
-        else
-        {
             _rotationLever.transform.position= new Vector3(0,0, _baseRotationLever.transform.position.z);
             float inputRotation = _rotationLever.transform.localPosition.z < 0 ? 0 : _rotationLever.transform.localPosition.z;
             Movement(_throttleLever.transform.localPosition.x/ _maxDirectionLever);
             Direction(0.4376513761751f * inputRotation - 0.9919922799418f);
-            Visual(0.4376513761751f * inputRotation - 0.9919922799418f);
-        }
+            Visual(0.4376513761751f * inputRotation - 0.9919922799418f);       
     }
 
     void Movement(float input)
@@ -61,7 +47,6 @@ public class RoverControler : MonoBehaviour
     }
     void Direction(float input)
     {
-       // Debug.Log(input);
         float newDirection = input* _turn;
         _wheelsFrontLeft.steerAngle = newDirection;
        _wheelsFrontRight.steerAngle = newDirection;
@@ -92,6 +77,7 @@ public class RoverControler : MonoBehaviour
 
         _hologram.transform.localPosition = transform.localPosition;
         _hologram.transform.localRotation = transform.localRotation;
+        _hologram.transform.localScale = transform.localScale;
     }
 
     public void BackButton() => _back = !_back;
