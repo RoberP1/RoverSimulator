@@ -4,6 +4,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Energy))]
+[RequireComponent(typeof(Rigidbody))]
 public class RoverControler : MonoBehaviour
 {
     [SerializeField] WheelCollider _wheelsFrontLeft, _wheelsFrontRight;
@@ -15,21 +17,33 @@ public class RoverControler : MonoBehaviour
     [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
     [SerializeField] GameObject _throttleLever, _rotationLever,_baseRotationLever, _hologram;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
+    Energy _energy;
 
     void Start()
     {
        rb= GetComponent<Rigidbody>();
         wheelsColliders= GetComponentsInChildren<WheelCollider>();
-        
+        _energy= GetComponent<Energy>();
+
+
+        StartCoroutine(downEnergy(_energy.timeLoad, _throttleLever.transform.localPosition.x / _maxDirectionLever));
     }
 
     void Update()
     {
-            _rotationLever.transform.position= new Vector3(0,0, _baseRotationLever.transform.position.z);
-            float inputRotation = _rotationLever.transform.localPosition.z < 0 ? 0 : _rotationLever.transform.localPosition.z;
-            Movement(_throttleLever.transform.localPosition.x/ _maxDirectionLever);
-            Direction(0.4376513761751f * inputRotation - 0.9919922799418f);
-            Visual(0.4376513761751f * inputRotation - 0.9919922799418f);       
+        if (_energy.actualEnergy >= 0) 
+    { 
+            _rotationLever.transform.position = new Vector3(0, 0, _baseRotationLever.transform.position.z);
+        float inputRotation = _rotationLever.transform.localPosition.z < 0 ? 0 : _rotationLever.transform.localPosition.z;
+        Movement(_throttleLever.transform.localPosition.x / _maxDirectionLever);
+        Direction(0.4376513761751f * inputRotation - 0.9919922799418f);
+        Visual(0.4376513761751f * inputRotation - 0.9919922799418f);
+    }
+        else
+        {
+        Movement(0);
+        Direction(0);
+        }
     }
 
     void Movement(float input)
@@ -43,7 +57,7 @@ public class RoverControler : MonoBehaviour
         if (actualVelocity >= _velocityMax) velocity = 0;
 
         foreach (WheelCollider item in wheelsColliders) item.motorTorque = velocity;
-       
+        
     }
     void Direction(float input)
     {
@@ -82,4 +96,10 @@ public class RoverControler : MonoBehaviour
 
     public void BackButton() => _back = !_back;
 
+    IEnumerator downEnergy(float time, float inputAceleretion)
+    {
+        yield return new WaitForSeconds(time);
+        if (inputAceleretion != 0 && _energy.actualEnergy>0) _energy.actualEnergy--;
+        StartCoroutine(downEnergy(time, _throttleLever.transform.localPosition.x / _maxDirectionLever));
+    }
 }

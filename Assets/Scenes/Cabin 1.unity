@@ -1673,6 +1673,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rover
       objectReference: {fileID: 0}
+    - target: {fileID: 5418588109373525821, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: solar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418588109373525821, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: timeLoad
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418588109373525821, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17f89e68dbefbe49b88f60d39b2eb23, type: 3}
 --- !u!1 &104817389
