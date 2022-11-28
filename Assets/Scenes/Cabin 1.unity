@@ -1660,6 +1660,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1595527582782145272, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
+      propertyPath: far clip plane
+      value: 298.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145272, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
@@ -1667,6 +1672,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6422527
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.766493
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 100.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145277, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582782145278, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: m_RenderShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1595527583647778000, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
