@@ -99,7 +99,7 @@ public class RoverControler : MonoBehaviour
     IEnumerator downEnergy(float time, float inputAceleretion)
     {
         yield return new WaitForSeconds(time);
-        if (inputAceleretion != 0 && _energy.actualEnergy>0) _energy.actualEnergy--;
+        if (inputAceleretion != 0 && _energy.actualEnergy>0 && !_isBrake) _energy.actualEnergy--;
         StartCoroutine(downEnergy(time, _throttleLever.transform.localPosition.x / _maxDirectionLever));
     }
 }
