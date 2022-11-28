@@ -75,8 +75,8 @@ namespace Oculus.Interaction
             }
         }
 
-        private float _relativeAngle = 0.0f;
-        private float _constrainedRelativeAngle = 0.0f;
+        public float _relativeAngle = 0.0f;
+        public float _constrainedRelativeAngle = 0.0f;
 
         private IGrabbable _grabbable;
         private Vector3 _grabPositionInPivotSpace;
