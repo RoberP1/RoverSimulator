@@ -32,7 +32,7 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
@@ -19304,6 +19304,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: habit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813000658146689135, guid: 515f1ee457a34644e8db9e8d01ed502e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813000658405634020, guid: 515f1ee457a34644e8db9e8d01ed502e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813000658856434835, guid: 515f1ee457a34644e8db9e8d01ed502e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813000659330584723, guid: 515f1ee457a34644e8db9e8d01ed502e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8682501978664040269, guid: 515f1ee457a34644e8db9e8d01ed502e,
         type: 3}
