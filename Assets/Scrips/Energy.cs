@@ -30,9 +30,10 @@ public class Energy : MonoBehaviour
     }
 
     private void Update()
-    {
+    {  
         float percentage = actualEnergy * 100 / maxEnergy;
-        textEnergy.text = "Energy: " + percentage + "%";
+        if (percentage > 100) percentage = 100;
+        textEnergy.text = "Energy: " + percentage.ToString("F2") + "%";
         if (percentage > 70) textEnergy.color = Color.green;
         else if (percentage < 40) textEnergy.color = Color.red;
         else textEnergy.color = Color.yellow;
