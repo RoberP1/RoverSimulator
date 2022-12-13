@@ -9,6 +9,7 @@ public class RewardAnalyzer : MonoBehaviour
     public List<Reward> _rewards;
     [SerializeField] TextMeshProUGUI analyzerText;
     [SerializeField] float analysisTime;
+    [SerializeField] Material endMaterial;
     void Start()
     {
         foreach(Reward item in FindObjectsOfType<Reward>()) _rewards.Add(item); 
@@ -35,6 +36,7 @@ public class RewardAnalyzer : MonoBehaviour
         yield return new WaitForSeconds(reward.analizysTime);
         _rewards.Remove(reward);
         analyzerText.text = "Analizado";
+        reward.hologram.GetComponent<MeshRenderer>().material = endMaterial;
         yield return new WaitForSeconds(analysisTime);
         analyzerText.text = "";
     }
