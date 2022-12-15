@@ -52,4 +52,12 @@ public class ButtonLamp : MonoBehaviour
             rend.material.SetColor("_EmissionColor", new Color(0.0f, 0.0f, 0.0f, 0.0f));
         }
     }
+    public void ToggleLight()
+    {
+        on = !on;
+    }
+    public void ToggleLight(bool value)
+    {
+        on = value;
+    }
 }
