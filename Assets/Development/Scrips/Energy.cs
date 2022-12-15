@@ -7,11 +7,19 @@ public class Energy : MonoBehaviour
 {
     public bool solar;
     public float actualEnergy;
-    public float maxEnergy;
+    public float maxEnergy, changeEnergy;
     public float timeLoad;
     public TextMeshProUGUI textEnergy, textEnergyType;
+    SettingsRover settings;
     void Start()
     {
+        settings = FindObjectOfType<SettingsRover>();
+        if(settings.typeEnergy== "Solar") solar= true;
+        else solar= false;
+
+        if (settings.amountToFuel == "Maximum") maxEnergy += changeEnergy;
+        if (settings.amountToFuel == "Minimum") maxEnergy -= changeEnergy;
+
         actualEnergy = maxEnergy;
         if (solar)
         {

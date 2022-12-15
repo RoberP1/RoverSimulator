@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class RoverControler : MonoBehaviour
 {
     [SerializeField] WheelCollider _wheelsFrontLeft, _wheelsFrontRight;
-    [SerializeField] float _acceleration, _turn, _velocityMax, _brakeForce;
+    [SerializeField] float _acceleration, _turn, _changeTurn, _velocityMax, _changeSpeed, _brakeForce;
     public float actualVelocity;
     bool _back, _isBrake;
     Rigidbody rb;
@@ -17,14 +17,24 @@ public class RoverControler : MonoBehaviour
     [SerializeField] GameObject[] _visualsWheels,_rotationWheels;
     [SerializeField] GameObject _throttleLever, _rotationLever,_baseRotationLever, _hologram;
     [SerializeField] float _maxDirectionLever,_maxRotationLever;
+    SettingsRover settings;
     Energy _energy;
 
     void Start()
     {
+        settings= FindObjectOfType<SettingsRover>();
+
+        if (settings.maxSpeed == "Maximum") _velocityMax += _changeSpeed;
+        else if (settings.maxSpeed == "Minimum") _velocityMax -= _changeSpeed;
+
+        if (settings.turnAngle == "Maximum") _turn += _changeTurn;
+        else if (settings.turnAngle == "Minimum") _turn -= _changeTurn;
+
        rb= GetComponent<Rigidbody>();
         wheelsColliders= GetComponentsInChildren<WheelCollider>();
         _energy= GetComponent<Energy>();
 
+        rb.mass = settings.ValueWeight();
 
         StartCoroutine(downEnergy(_energy.timeLoad, _throttleLever.transform.localPosition.x / _maxDirectionLever));
     }
@@ -99,7 +109,11 @@ public class RoverControler : MonoBehaviour
     IEnumerator downEnergy(float time, float inputAceleretion)
     {
         yield return new WaitForSeconds(time);
-        if (inputAceleretion != 0 && _energy.actualEnergy>0 && !_isBrake) _energy.actualEnergy -= math.abs(inputAceleretion);
+        if (inputAceleretion != 0 && _energy.actualEnergy > 0 && !_isBrake)
+        {
+         if(_energy.solar)   _energy.actualEnergy -= math.abs(inputAceleretion)*2;
+         else _energy.actualEnergy -= math.abs(inputAceleretion);
+        }
         StartCoroutine(downEnergy(time, _throttleLever.transform.localPosition.x / _maxDirectionLever));
     }
 }

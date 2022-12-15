@@ -6,6 +6,7 @@ public class Reward : MonoBehaviour
     public string nameReward;
     public float analizysTime;
     public GameObject hologram;
+    public bool analized;
     private void Start()
     {
         hologram.transform.localPosition = transform.localPosition;
