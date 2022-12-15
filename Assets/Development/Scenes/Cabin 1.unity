@@ -1606,6 +1606,16 @@ PrefabInstance:
       objectReference: {fileID: 1635092162}
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
+      propertyPath: _changeTurn
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: _changeSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
       propertyPath: _velocityMax
       value: 5
       objectReference: {fileID: 0}
@@ -1749,6 +1759,11 @@ PrefabInstance:
       propertyPath: textEnergy
       value: 
       objectReference: {fileID: 1854729335}
+    - target: {fileID: 5418588109373525821, guid: a17f89e68dbefbe49b88f60d39b2eb23,
+        type: 3}
+      propertyPath: changeEnergy
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5418588109373525821, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
       propertyPath: textEnergyType
@@ -4711,6 +4726,7 @@ MonoBehaviour:
   nameReward: SADAS
   analizysTime: 3
   hologram: {fileID: 551878271}
+  analized: 0
 --- !u!1001 &362128379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12294,11 +12310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b72b59b9ca1c9449689fe3300c0535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: Medium
-  turnAngle: Medium
-  amountToFuel: Medium
-  typeEnergy: Solar
-  typeWeight: Medium
+  maxSpeed: Maximum
+  turnAngle: Maximum
+  amountToFuel: Maximum
+  typeEnergy: Fuel
+  typeWeight: Maximum
 --- !u!4 &1226060492
 Transform:
   m_ObjectHideFlags: 0

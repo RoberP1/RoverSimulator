@@ -4,15 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RewardAnalyzer : MonoBehaviour
+public class MissionAnalyzer : MonoBehaviour
 {
-    public List<Reward> _rewards;
+    public List<Mission> missions;
     [SerializeField] TextMeshProUGUI analyzerText;
     [SerializeField] float analysisTime;
     [SerializeField] Material endMaterial;
     void Start()
     {
-        foreach(Reward item in FindObjectsOfType<Reward>()) if(!item.analized) _rewards.Add(item); 
+        foreach(Mission item in FindObjectsOfType<Mission>()) if(!item.analized) missions.Add(item); 
     }
 
     void Update()
@@ -22,20 +22,20 @@ public class RewardAnalyzer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Reward reward= other.GetComponent<Reward>();
+        Mission reward= other.GetComponent<Mission>();
         if (reward != null) StartCoroutine(Analysis(reward));
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.GetComponent<Reward>() != null) StopAllCoroutines();
+        if(other.GetComponent<Mission>() != null) StopAllCoroutines();
     }
 
-    IEnumerator Analysis(Reward reward)
+    IEnumerator Analysis(Mission reward)
     {
         analyzerText.text = "Analizando...";
         yield return new WaitForSeconds(reward.analizysTime);
         reward.analized=true;
-        _rewards.Remove(reward);
+        missions.Remove(reward);
         analyzerText.text = "Analizado";
         reward.hologram.GetComponent<MeshRenderer>().material = endMaterial;
         yield return new WaitForSeconds(analysisTime);

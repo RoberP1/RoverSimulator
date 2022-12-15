@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ScriptableReward", menuName = "Scriptables/Reward")]
-public class Reward : MonoBehaviour
+public class Mission : MonoBehaviour
 {
     public string nameReward;
     public float analizysTime;
