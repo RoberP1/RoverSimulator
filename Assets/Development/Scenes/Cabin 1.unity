@@ -4725,7 +4725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameReward: SADAS
   analizysTime: 3
-  hologram: {fileID: 551878271}
+  hologram: {fileID: 1717343400}
   analized: 0
 --- !u!1001 &362128379
 PrefabInstance:
@@ -6533,81 +6533,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1937984024832861840, guid: a17f89e68dbefbe49b88f60d39b2eb23,
     type: 3}
   m_PrefabInstance: {fileID: 98961784}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &551878270
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2066900933}
-    m_Modifications:
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.4531798
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.11340326
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.16807175
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7811363269037770421, guid: bc70114629603014bac32b1835487b11,
-        type: 3}
-      propertyPath: m_Name
-      value: ML3D_Rocks_00_01 Variant
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bc70114629603014bac32b1835487b11, type: 3}
---- !u!1 &551878271 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7811363269037770421, guid: bc70114629603014bac32b1835487b11,
-    type: 3}
-  m_PrefabInstance: {fileID: 551878270}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &571458532
 GameObject:
@@ -12281,6 +12206,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39d8d0ebbb4568489f039d8a185958e, type: 3}
+--- !u!1001 &1196107712
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2066900933}
+    m_Modifications:
+    - target: {fileID: 3354778842960763224, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35a37593be9ec194099f524167cda12c, type: 2}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.736258
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0030496484
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.7017684
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7499780542071037105, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811363269037770421, guid: bc70114629603014bac32b1835487b11,
+        type: 3}
+      propertyPath: m_Name
+      value: ML3D_Rocks_00_01 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc70114629603014bac32b1835487b11, type: 3}
 --- !u!1 &1226060490
 GameObject:
   m_ObjectHideFlags: 0
@@ -15180,6 +15179,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704396861}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1717343400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7811363269037770421, guid: bc70114629603014bac32b1835487b11,
+    type: 3}
+  m_PrefabInstance: {fileID: 1196107712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1731814216
 GameObject:
   m_ObjectHideFlags: 0
@@ -17037,10 +17042,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04980c1d2e4be7a4fa209e523b285b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rewards: []
+  missions: []
   analyzerText: {fileID: 2121358002}
   analysisTime: 2
-  endMaterial: {fileID: 2100000, guid: 35a37593be9ec194099f524167cda12c, type: 2}
+  endMaterial: {fileID: 2100000, guid: d64cefc7c8501bc4ab9333596fe47a94, type: 2}
 --- !u!1001 &1956569080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19660,6 +19665,21 @@ PrefabInstance:
       propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1950930733}
+    - target: {fileID: 5506180557528400737, guid: 1304808e9404fd14f9fcdbd0a25708d2,
+        type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1950930739}
+    - target: {fileID: 5506180557528400737, guid: 1304808e9404fd14f9fcdbd0a25708d2,
+        type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Analize
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506180557528400737, guid: 1304808e9404fd14f9fcdbd0a25708d2,
+        type: 3}
+      propertyPath: _whenUnselect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MissionAnalyzer, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6482478932852568006, guid: 1304808e9404fd14f9fcdbd0a25708d2,
         type: 3}
       propertyPath: m_Name
