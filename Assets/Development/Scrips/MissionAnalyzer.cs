@@ -21,6 +21,7 @@ public class MissionAnalyzer : MonoBehaviour
     {
         analyzable = false;
         foreach(Mission item in FindObjectsOfType<Mission>()) if(!item.analized) missions.Add(item);
+        analyzerText.text = "";
     }
 
    public void Analize()
