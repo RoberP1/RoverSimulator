@@ -38,10 +38,13 @@ public class MissionAnalyzer : MonoBehaviour
         Mission reward= other.GetComponent<Mission>();
         if (reward != null)
         {
-            actualMission = reward;
-            analyzable= true;  
-            if(!reward.analized)lightBool= true;
-            LightSwicht.Invoke(lightBool);
+            if (!reward.analized)
+            {
+                actualMission = reward;
+                analyzable = true;
+                lightBool = true;
+                LightSwicht.Invoke(lightBool);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
