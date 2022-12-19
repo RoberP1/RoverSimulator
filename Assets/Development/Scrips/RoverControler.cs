@@ -22,17 +22,23 @@ public class RoverControler : MonoBehaviour
 
     void Start()
     {
-        settings= FindObjectOfType<SettingsRover>();
+
+
+        rb = GetComponent<Rigidbody>();
+        wheelsColliders = GetComponentsInChildren<WheelCollider>();
+        _energy = GetComponent<Energy>();
+        //StartRover();
+    }
+
+    public void StartRover()
+    {
+        settings = FindObjectOfType<SettingsRover>();
 
         if (settings.maxSpeed == "Maximum") _velocityMax += _changeSpeed;
         else if (settings.maxSpeed == "Minimum") _velocityMax -= _changeSpeed;
 
         if (settings.turnAngle == "Maximum") _turn += _changeTurn;
         else if (settings.turnAngle == "Minimum") _turn -= _changeTurn;
-
-       rb= GetComponent<Rigidbody>();
-        wheelsColliders= GetComponentsInChildren<WheelCollider>();
-        _energy= GetComponent<Energy>();
 
         rb.mass = settings.ValueWeight();
 

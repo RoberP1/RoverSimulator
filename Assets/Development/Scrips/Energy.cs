@@ -11,11 +11,10 @@ public class Energy : MonoBehaviour
     public float timeLoad;
     public TextMeshProUGUI textEnergy, textEnergyType;
     SettingsRover settings;
-    void Start()
+    public void StartRover()
     {
         settings = FindObjectOfType<SettingsRover>();
-        if(settings.typeEnergy== "Solar") solar= true;
-        else solar= false;
+        solar = settings.SolarEnergy;
 
         if (settings.amountToFuel == "Maximum") maxEnergy += changeEnergy;
         if (settings.amountToFuel == "Minimum") maxEnergy -= changeEnergy;
