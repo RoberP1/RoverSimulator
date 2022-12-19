@@ -11,7 +11,7 @@ public class Energy : MonoBehaviour
     public float timeLoad;
     public TextMeshProUGUI textEnergy, textEnergyType;
     SettingsRover settings;
-    public void StartRover()
+    public void Start()
     {
         settings = FindObjectOfType<SettingsRover>();
         solar = settings.SolarEnergy;
@@ -40,7 +40,7 @@ public class Energy : MonoBehaviour
     {  
         float percentage = actualEnergy * 100 / maxEnergy;
         if (percentage > 100) percentage = 100;
-        textEnergy.text = "Energy: " + percentage.ToString("F2") + "%";
+        textEnergy.text = "Energy: " + percentage.ToString("") + "%";
         if (percentage > 70) textEnergy.color = Color.green;
         else if (percentage < 40) textEnergy.color = Color.red;
         else textEnergy.color = Color.yellow;

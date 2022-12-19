@@ -10,6 +10,5 @@ public class Mission : MonoBehaviour
     {
         hologram.transform.localPosition = transform.localPosition;
         hologram.transform.localRotation = transform.localRotation;
-        hologram.transform.localScale = transform.localScale;
     }
 }
