@@ -40,7 +40,7 @@ public class MissionAnalyzer : MonoBehaviour
         {
             actualMission = reward;
             analyzable= true;  
-            lightBool= true;
+            if(!reward.analized)lightBool= true;
             LightSwicht.Invoke(lightBool);
         }
     }
@@ -53,6 +53,7 @@ public class MissionAnalyzer : MonoBehaviour
                 audioSource.Stop();
                 audioSource.clip = unFinish;
                 audioSource.Play();
+                analyzerText.text = "";
             }
             StopAllCoroutines();
             actualMission = null;
