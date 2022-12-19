@@ -15,10 +15,14 @@ public class MissionAnalyzer : MonoBehaviour
     bool analyzable;
     Mission actualMission;
     public bool lightBool;
+    bool isResearching;
     public UnityEvent<bool> LightSwicht;
-     
+    [SerializeField] AudioClip unFinish, finish, research;
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         analyzable = false;
         foreach(Mission item in FindObjectsOfType<Mission>()) if(!item.analized) missions.Add(item);
         analyzerText.text = "";
@@ -44,6 +48,12 @@ public class MissionAnalyzer : MonoBehaviour
     {
         if (other.GetComponent<Mission>() != null)
         {
+            if (isResearching)
+            {
+                audioSource.Stop();
+                audioSource.clip = unFinish;
+                audioSource.Play();
+            }
             StopAllCoroutines();
             actualMission = null;
             analyzable= false;
@@ -54,16 +64,20 @@ public class MissionAnalyzer : MonoBehaviour
 
     IEnumerator Analysis(Mission reward)
     {
+        audioSource.clip = research;
+        audioSource.Play();
+        isResearching = true;
         analyzable = false;
         analyzerText.text = "Analizando...";
-        yield return new WaitForSeconds(reward.analizysTime);
+        yield return new WaitForSeconds(research.length);
         reward.analized=true;
         missions.Remove(reward);
         lightBool = false;
         LightSwicht.Invoke(lightBool);
-        analyzerText.text = "Analizado";
-       reward.hologram.transform.GetChild(0).GetComponent<MeshRenderer>().material = endMaterial;
-        yield return new WaitForSeconds(analysisTime);
         analyzerText.text = "";
+        isResearching = false;
+        audioSource.clip = finish;
+        audioSource.Play();
+        reward.hologram.transform.GetChild(0).GetComponent<MeshRenderer>().material = endMaterial;     
     }
 }
