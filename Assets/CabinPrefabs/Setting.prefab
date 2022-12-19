@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 56712368277213167}
   - component: {fileID: 940328900842432552}
   m_Layer: 0
-  m_Name: Maximum
+  m_Name: Minimum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 8544345702022509653}
   - component: {fileID: 6853830688941567291}
   m_Layer: 0
-  m_Name: Minimum
+  m_Name: Maximum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

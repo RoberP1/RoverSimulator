@@ -18,13 +18,13 @@ public class SettingsRover : MonoBehaviour
     {
         float valueWeight = 0;
 
-        if (amountToFuel == "Maximum") valueWeight += 50;
-        else if (amountToFuel == "Minimum") valueWeight -= 50;
+        if (amountToFuel == "Maximum") valueWeight += 30;
+        else if (amountToFuel == "Minimum") valueWeight -= 30;
         
         
-        if(typeWeight == "Maximum") valueWeight += 500;
-        else if(typeWeight == "Minimum") valueWeight += 300;
-        else if(typeWeight == "Medium") valueWeight += 400;
+        if(typeWeight == "Maximum") valueWeight += 550;
+        else if(typeWeight == "Minimum") valueWeight += 450;
+        else if(typeWeight == "Medium") valueWeight += 500;
         return valueWeight;
     }
     public void StartSettings()
