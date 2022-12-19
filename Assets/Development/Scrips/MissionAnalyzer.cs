@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MissionAnalyzer : MonoBehaviour
@@ -13,6 +14,9 @@ public class MissionAnalyzer : MonoBehaviour
     [SerializeField] Material endMaterial;
     bool analyzable;
     Mission actualMission;
+    public bool lightBool;
+    public UnityEvent<bool> LightSwicht;
+     
     void Start()
     {
         analyzable = false;
@@ -31,6 +35,8 @@ public class MissionAnalyzer : MonoBehaviour
         {
             actualMission = reward;
             analyzable= true;  
+            lightBool= true;
+            LightSwicht.Invoke(lightBool);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,6 +46,8 @@ public class MissionAnalyzer : MonoBehaviour
             StopAllCoroutines();
             actualMission = null;
             analyzable= false;
+            lightBool = false;
+            LightSwicht.Invoke(lightBool);
         }
     }
 
@@ -50,6 +58,8 @@ public class MissionAnalyzer : MonoBehaviour
         yield return new WaitForSeconds(reward.analizysTime);
         reward.analized=true;
         missions.Remove(reward);
+        lightBool = false;
+        LightSwicht.Invoke(lightBool);
         analyzerText.text = "Analizado";
        reward.hologram.transform.GetChild(0).GetComponent<MeshRenderer>().material = endMaterial;
         yield return new WaitForSeconds(analysisTime);

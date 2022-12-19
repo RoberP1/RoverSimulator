@@ -11,7 +11,7 @@ public class Energy : MonoBehaviour
     public float timeLoad;
     public TextMeshProUGUI textEnergy, textEnergyType;
     SettingsRover settings;
-    public void Start()
+    public void StartRover()
     {
         settings = FindObjectOfType<SettingsRover>();
         solar = settings.SolarEnergy;
