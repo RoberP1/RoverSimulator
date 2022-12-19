@@ -1736,17 +1736,17 @@ PrefabInstance:
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
       propertyPath: _changeTurn
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
       propertyPath: _changeSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
       propertyPath: _velocityMax
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1595527582504606685, guid: a17f89e68dbefbe49b88f60d39b2eb23,
         type: 3}
