@@ -8,7 +8,6 @@ public class SettingsRover : MonoBehaviour
     public ToggleGroup maxSpeedTG, turnAngleTG, amountToFuelTG, typeWeightTG;
     public string  maxSpeed, turnAngle, amountToFuel, typeWeight;
     public bool SolarEnergy;
-    [SerializeField] GameObject rover;
 
     public void SetSpeed(string speed) => maxSpeed = speed;
     public void SetAngle(string angle) => turnAngle = angle;
@@ -34,7 +33,6 @@ public class SettingsRover : MonoBehaviour
         SetAngle(turnAngleTG.GetFirstActiveToggle().name);
         SetamountToFuel(amountToFuelTG.GetFirstActiveToggle().name);
         SetWeight(typeWeightTG.GetFirstActiveToggle().name);
-        rover.SetActive(true);
     }
     private void Update()
     {
