@@ -30,7 +30,7 @@ public class MissionAnalyzer : MonoBehaviour
 
    public void Analize()
     {
-        if (analyzable) StartCoroutine(Analysis(actualMission));
+        if (analyzable && !actualMission.analized) StartCoroutine(Analysis(actualMission));
     }
 
     private void OnTriggerEnter(Collider other)
