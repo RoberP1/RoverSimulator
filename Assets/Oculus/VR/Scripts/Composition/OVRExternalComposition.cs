@@ -19,14 +19,10 @@
  */
 
 #if UNITY_ANDROID && !UNITY_EDITOR
-#define OVR_ANDROID_MRC
 #endif
 
-using System;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading;
-using UnityEngine.Rendering;
 using Object = UnityEngine.Object;
 
 #if USING_URP
